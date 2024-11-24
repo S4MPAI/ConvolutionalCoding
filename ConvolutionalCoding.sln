@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvolutionalCoding", "ConvolutionalCoding\ConvolutionalCoding.csproj", "{91BFA055-96F1-40E4-B172-C08D6351118F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91BFA055-96F1-40E4-B172-C08D6351118F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91BFA055-96F1-40E4-B172-C08D6351118F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91BFA055-96F1-40E4-B172-C08D6351118F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91BFA055-96F1-40E4-B172-C08D6351118F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
