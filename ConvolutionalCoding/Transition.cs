@@ -17,8 +17,8 @@ public class Transition(
         var coderOutBits = new bool[coderBitness];
         for (var i = 0; i < coderOutBits.Length; i++)
         {
-            var shift = coderBitness - i;
-            coderOutBits[i] = coderOut >> shift == 1;
+            var shift = coderBitness - 1 - i;
+            coderOutBits[i] = ((coderOut >> shift) & 1) == 1;
         }
         
         return coderOutBits;

@@ -31,7 +31,7 @@ public abstract class ViterbiBase(IEnumerable<int> polynoms)
         for (var stateNumber = 1; stateNumber < StatesCount; stateNumber++)
         {
             var adderOuts = new List<bool>(Polynoms.Count);
-            var register = new BitArray(stateNumber);
+            var register = new BitArray([stateNumber]);
             foreach (var polynom in Polynoms)
             {
                 var adderOut = false;
