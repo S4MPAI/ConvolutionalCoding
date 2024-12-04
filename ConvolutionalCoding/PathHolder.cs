@@ -13,15 +13,15 @@ public class PathHolder
             Paths[i] = new DecoderPath();
     }
 
-    public void AddSurvivorPath(List<Transition> survivors)
+    public void AddSurvivorPath(Transition[] survivors)
     {
         if (IsFirstNode[0])
             AddSurvivorPathFirstly(survivors);
         else
         {
-            var survivorIndexes = new int[survivors.Count];
+            var survivorIndexes = new int[survivors.Length];
             var prevPathIndexes = new List<int>();
-            for (var i = 0; i < survivors.Count; i++)
+            for (var i = 0; i < survivors.Length; i++)
             {
                 survivorIndexes[i] = i;
                 for (var j = 0; j < Paths.Count; j++)
@@ -59,24 +59,24 @@ public class PathHolder
         }
     }
 
-    private void AddSurvivorPathFirstly(List<Transition> survivors)
+    private void AddSurvivorPathFirstly(Transition[] survivors)
     {
-        for (var i = 0; i < survivors.Count; i++)
+        for (var i = 0; i < survivors.Length; i++)
             Paths[i].AddSurvivorNode(survivors[i]);
         IsFirstNode[0] = false;
     }
 
-    // public int GetPathMetricByNode(int node)
-    // {
-    //     if (Paths[0].SurvivorPath.Count <= 0) 
-    //         return 0;
-    //     
-    //     foreach (var path in Paths)
-    //     {
-    //         if (path.DestinationNode == node)
-    //             return path.Metrics;
-    //     }
-    //
-    //     return 0;
-    // }
+    public int GetPathMetricByNode(int node)
+    {
+        if (Paths[0].SurvivorPath.Count <= 0) 
+            return 0;
+        
+        foreach (var path in Paths)
+        {
+            if (path.DestinationNode == node)
+                return path.Metrics;
+        }
+    
+        return 0;
+    }
 }
