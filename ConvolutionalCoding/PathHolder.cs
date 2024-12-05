@@ -2,13 +2,13 @@ namespace ConvolutionalCoding;
 
 public class PathHolder
 {
-    public readonly List<DecoderPath> Paths;
+    public readonly DecoderPath[] Paths;
     private Boolean[] IsFirstNode = [true, true];
     
     public PathHolder(int decoderStatesCount)
     {
         var count = decoderStatesCount / 2;
-        Paths = new List<DecoderPath>(count);
+        Paths = new DecoderPath[count];
         for (var i = 0; i < count; i++)
             Paths[i] = new DecoderPath();
     }
@@ -24,7 +24,7 @@ public class PathHolder
             for (var i = 0; i < survivors.Length; i++)
             {
                 survivorIndexes[i] = i;
-                for (var j = 0; j < Paths.Count; j++)
+                for (var j = 0; j < Paths.Length; j++)
                 {
                     if (Paths[j].DestinationNode == survivors[i].SourceNode)
                         prevPathIndexes.Add(j);
